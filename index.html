@@ -11,19 +11,19 @@
 <body>
   <nav class="sticky-nav" aria-label="Navegação principal">
     <a class="nav-logo" href="#inicio">política de comunicação <span aria-hidden="true">●</span></a>
-    <label class="nav-search" for="nav-search-input">
+    <label class="nav-search-container" for="nav-search-input">
       <span class="sr-only">Pesquisar</span>
       <input type="search" id="nav-search-input" placeholder="pesquisar..." autocomplete="off">
     </label>
-    <a href="#acervo" class="nav-link">índice</a>
+    <a href="#acervo" class="nav-link-pastas">índice</a>
     <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Alternar tema">tema</button>
   </nav>
 
   <header class="page-masthead" id="inicio">
-    <section class="search-hero" aria-label="Pesquisar no acervo">
+    <section class="busca-principal" aria-label="Pesquisar no acervo">
       <div class="ifmg-mark" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
       <label class="sr-only" for="main-search-input">Pesquisar cases e hipóteses</label>
-      <input type="search" id="main-search-input" placeholder="pesquisar no acervo" autocomplete="off">
+      <div class="busca-campo"><input type="search" id="main-search-input" placeholder="pesquisar no acervo" autocomplete="off"></div>
     </section>
     <div class="masthead-copy">
       <h1>política de<br><span>comunicação</span></h1>
@@ -32,33 +32,33 @@
   </header>
 
   <main id="acervo">
-    <section class="intro" aria-label="Sobre este acervo">
+    <section class="intro orientacoes-iniciais" aria-label="Sobre este acervo">
       <p>Um espaço de investigação: os <strong>cases</strong> registram situações concretas; os <strong>padrões e hipóteses</strong> conectam aprendizados que ainda precisam ser testados.</p>
     </section>
 
-    <section class="collection" id="collection-cases" aria-labelledby="cases-title">
+    <section class="collection explorar-perfis" id="collection-cases" aria-labelledby="cases-title">
       <div class="section-heading"><h2 id="cases-title">cases...</h2><span id="cases-count"></span></div>
-      <div class="cards" id="cases-grid" aria-live="polite"></div>
+      <div class="pastas-container" id="cases-grid" aria-live="polite"></div>
     </section>
 
-    <section class="collection" id="collection-patterns" aria-labelledby="patterns-title">
+    <section class="collection explorar-perfis" id="collection-patterns" aria-labelledby="patterns-title">
       <div class="section-heading"><h2 id="patterns-title">padrões e hipóteses...</h2><span id="patterns-count"></span></div>
-      <div class="cards" id="patterns-grid" aria-live="polite"></div>
+      <div class="pastas-container" id="patterns-grid" aria-live="polite"></div>
     </section>
 
     <section class="results hidden" id="search-results" aria-live="polite">
       <div class="section-heading"><h2>resultados...</h2><span id="results-count"></span></div>
-      <div class="cards" id="results-grid"></div>
+      <div class="pastas-container" id="results-grid"></div>
     </section>
 
     <section class="reader hidden" id="reader" aria-live="polite">
-      <div class="reader-layout">
-        <aside class="reader-toc" id="reader-toc" aria-label="Seções desta página"></aside>
-        <article class="reader-content">
-          <nav class="breadcrumbs" id="breadcrumbs" aria-label="Caminho de navegação"></nav>
+      <div class="artigo-layout-container">
+        <aside class="artigo-toc-sidebar" id="reader-toc" aria-label="Seções desta página"></aside>
+        <article class="artigo-conteudo-wrapper">
+          <nav class="artigo-breadcrumbs" id="breadcrumbs" aria-label="Caminho de navegação"></nav>
           <h2 id="article-title"></h2>
-          <div id="article-body" class="article-body"></div>
-          <button class="back-button" id="back-button" type="button">← voltar para o acervo</button>
+          <div id="article-body" class="artigo-corpo"></div>
+          <button class="btn-voltar" id="back-button" type="button">← voltar para o acervo</button>
         </article>
       </div>
     </section>

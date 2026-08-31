@@ -21,14 +21,16 @@ function dateFrom(text) { return text.match(/data-registro:\s*([^\n]+)/)?.[1]?.t
 function escapeHtml(value) { const e = document.createElement("span"); e.textContent = value; return e.innerHTML; }
 
 async function listMarkdown(folder) {
-  const url = `https://api.github.com/repos/${REPO}/contents/${encodeURIComponent(folder)}?ref=${BRANCH}`;
+  const url = `https://api.github.com/repos/${REPO}/git/trees/${BRANCH}?recursive=1`;
   const response = await fetch(url);
   if (!response.ok) throw new Error(`Não foi possível carregar ${folder}.`);
-  const entries = await response.json();
-  return entries.filter(entry => entry.type === "file" && entry.name.endsWith(".md"));
+  const data = await response.json();
+  if (!Array.isArray(data.tree)) throw new Error(`O índice de ${folder.path} não foi retornado pela API.`);
+  return data.tree.filter(entry => entry.type === "blob" && entry.path.startsWith(`${folder.path}/`) && entry.path.endsWith(".md"));
 }
 async function loadArticle(entry, folder) {
-  const response = await fetch(entry.download_url);
+  const encodedPath = entry.path.split("/").map(encodeURIComponent).join("/");
+  const response = await fetch(`https://raw.githubusercontent.com/${REPO}/${BRANCH}/${encodedPath}`);
   if (!response.ok) throw new Error(`Não foi possível abrir ${entry.name}.`);
   const content = await response.text();
   return { title: titleFromPath(entry.path), sourcePath: entry.path, type: folder.key, label: folder.label, content, summary: summaryFrom(content), date: dateFrom(content) };
@@ -36,9 +38,9 @@ async function loadArticle(entry, folder) {
 
 function card(article) {
   const item = document.createElement("a");
-  item.className = "card";
+  item.className = "perfil-card perfil-fundamentos";
   item.href = `#${encodeURIComponent(article.sourcePath)}`;
-  item.innerHTML = `<span class="card-type">${article.label}</span><h3>${escapeHtml(article.title)}</h3><p>${escapeHtml(article.summary)}</p><span class="card-meta">${article.date || "registro em observação"}</span>`;
+  item.innerHTML = `<span class="perfil-card-icone" aria-hidden="true">◆</span><span class="perfil-card-conteudo"><strong>${escapeHtml(article.title)}</strong><span class="indice-resumo">${escapeHtml(article.summary)}</span></span><span class="perfil-card-meta">${article.label}${article.date ? ` <b>${article.date}</b>` : ""}</span>`;
   item.addEventListener("click", event => { event.preventDefault(); openArticle(article); });
   return item;
 }
@@ -96,7 +98,7 @@ async function init() {
   FOLDERS.forEach(folder => byId(folder.grid).append(byId("loading-card").content.cloneNode(true)));
   try { articles = (await Promise.all(FOLDERS.map(async folder => (await Promise.all((await listMarkdown(folder)).map(entry => loadArticle(entry, folder))))))).flat().sort((a,b) => a.title.localeCompare(b.title, "pt-BR")); renderCollections();
     const path = decodeURIComponent(location.hash.slice(1)); const initial = articles.find(article => article.sourcePath === path); if (initial) openArticle(initial, false);
-  } catch (error) { document.querySelectorAll(".cards").forEach(grid => grid.innerHTML = `<p class="loading">${escapeHtml(error.message)} Tente recarregar a página.</p>`); }
+  } catch (error) { const message = error?.message || String(error); document.querySelectorAll(".pastas-container").forEach(grid => grid.innerHTML = `<p class="loading">${escapeHtml(message)} Tente recarregar a página.</p>`); }
   ["main-search-input", "nav-search-input"].forEach(id => byId(id).addEventListener("input", event => setSearch(event.target.value)));
   byId("back-button").addEventListener("click", returnToCollection);
   byId("theme-toggle").addEventListener("click", () => { const next = document.documentElement.dataset.theme === "dark" ? "light" : "dark"; document.documentElement.dataset.theme = next; localStorage.setItem("tema-politica-comunicacao", next); });
