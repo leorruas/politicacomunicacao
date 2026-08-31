@@ -653,58 +653,52 @@ function renderizarBreadcrumbs(artigo) {
     breadcrumbs.appendChild(itemAtual);
 }
 
+function criarCartaoDeNavegacao(artigo, direcao) {
+    const cartao = document.createElement("a");
+    cartao.className = `nav-card nav-card-${direcao}`;
+    cartao.href = `#/${rotaDoArtigo(artigo).split("/").map(encodeURIComponent).join("/")}`;
+
+    const rotulo = document.createElement("span");
+    rotulo.className = "nav-card-label";
+    rotulo.textContent = direcao === "anterior" ? "← registro anterior" : "próximo registro →";
+
+    const titulo = document.createElement("span");
+    titulo.className = "nav-card-title";
+    titulo.textContent = tituloDaAcao(artigo.titulo);
+
+    cartao.append(rotulo, titulo);
+    cartao.addEventListener("click", (event) => {
+        if (event.metaKey || event.ctrlKey || event.shiftKey || event.button === 1) return;
+        event.preventDefault();
+        abrirArtigo(artigo.titulo, artigo.conteudo);
+    });
+    return cartao;
+}
+
 function renderizarNavegacaoSequencial(artigo) {
-    const container = document.getElementById("artigo-nav-rodape");
-    if (!container) return;
+    const navegacao = document.getElementById("artigo-nav-rodape");
+    if (!navegacao) return;
 
-    container.innerHTML = "";
-    const listaCategoria = todasAsPastas[artigo.categoria] || [];
-    const indiceAtual = listaCategoria.findIndex(item => item.titulo === artigo.titulo);
+    navegacao.innerHTML = "";
+    const artigosDaCategoria = todasAsPastas[artigo.categoria] || [];
+    const indice = artigosDaCategoria.findIndex(item => item.sourcePath === artigo.sourcePath);
+    const anterior = indice > 0 ? artigosDaCategoria[indice - 1] : null;
+    const proximo = indice >= 0 && indice < artigosDaCategoria.length - 1
+        ? artigosDaCategoria[indice + 1]
+        : null;
 
-    if (indiceAtual === -1 || listaCategoria.length <= 1) {
-        container.classList.add("escondido");
+    if (!anterior && !proximo) {
+        navegacao.classList.add("escondido");
         return;
     }
 
-    container.classList.remove("escondido");
-
-    const anterior = indiceAtual > 0 ? listaCategoria[indiceAtual - 1] : null;
-    const proximo = indiceAtual < listaCategoria.length - 1 ? listaCategoria[indiceAtual + 1] : null;
-
-    if (anterior) {
-        const cardAnterior = document.createElement("a");
-        cardAnterior.className = "artigo-nav-card nav-anterior";
-        cardAnterior.href = `#/${rotaDoArtigo(anterior).split("/").map(encodeURIComponent).join("/")}`;
-        cardAnterior.innerHTML = `
-            <span class="nav-card-direcao">← registro anterior</span>
-            <strong class="nav-card-titulo">${escaparHtml(tituloDaAcao(anterior.titulo))}</strong>
-        `;
-        cardAnterior.addEventListener("click", (e) => {
-            if (e.metaKey || e.ctrlKey || e.shiftKey || e.button === 1) return;
-            e.preventDefault();
-            abrirArtigo(anterior.titulo, anterior.conteudo);
-        });
-        container.appendChild(cardAnterior);
-    } else {
-        const placeholder = document.createElement("div");
-        container.appendChild(placeholder);
-    }
-
-    if (proximo) {
-        const cardProximo = document.createElement("a");
-        cardProximo.className = "artigo-nav-card nav-proximo";
-        cardProximo.href = `#/${rotaDoArtigo(proximo).split("/").map(encodeURIComponent).join("/")}`;
-        cardProximo.innerHTML = `
-            <span class="nav-card-direcao">próximo registro →</span>
-            <strong class="nav-card-titulo">${escaparHtml(tituloDaAcao(proximo.titulo))}</strong>
-        `;
-        cardProximo.addEventListener("click", (e) => {
-            if (e.metaKey || e.ctrlKey || e.shiftKey || e.button === 1) return;
-            e.preventDefault();
-            abrirArtigo(proximo.titulo, proximo.conteudo);
-        });
-        container.appendChild(cardProximo);
-    }
+    navegacao.classList.remove("escondido");
+    const grade = document.createElement("div");
+    grade.className = "artigo-nav-cards-grid";
+    if (anterior) grade.appendChild(criarCartaoDeNavegacao(anterior, "anterior"));
+    else grade.appendChild(document.createElement("span"));
+    if (proximo) grade.appendChild(criarCartaoDeNavegacao(proximo, "proximo"));
+    navegacao.appendChild(grade);
 }
 
 let scrollSpyObserver = null;
