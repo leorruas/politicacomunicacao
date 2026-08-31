@@ -21,7 +21,7 @@
 
   <header class="page-masthead" id="inicio">
     <section class="busca-principal" aria-label="Pesquisar no acervo">
-      <div class="ifmg-mark" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+      <div class="ifmg-mark" aria-label="Instituto Federal de Minas Gerais"><i class="ifmg-dot"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
       <label class="sr-only" for="main-search-input">Pesquisar cases e hipóteses</label>
       <div class="busca-campo"><input type="search" id="main-search-input" placeholder="pesquisar no acervo" autocomplete="off"></div>
     </section>
@@ -32,18 +32,21 @@
   </header>
 
   <main id="acervo">
-    <section class="intro orientacoes-iniciais" aria-label="Sobre este acervo">
-      <p>Um espaço de investigação: os <strong>cases</strong> registram situações concretas; os <strong>padrões e hipóteses</strong> conectam aprendizados que ainda precisam ser testados.</p>
+    <section class="explorar-perfis" id="folders-home" aria-labelledby="folders-title">
+      <h2 id="folders-title">explorar...</h2>
+      <div class="pastas-container" id="folders-grid" aria-live="polite"></div>
     </section>
 
-    <section class="collection explorar-perfis" id="collection-cases" aria-labelledby="cases-title">
+    <section class="collection explorar-perfis hidden" id="collection-cases" aria-labelledby="cases-title">
       <div class="section-heading"><h2 id="cases-title">cases...</h2><span id="cases-count"></span></div>
       <div class="pastas-container" id="cases-grid" aria-live="polite"></div>
+      <button class="btn-voltar" data-folder-back type="button">← voltar para as pastas</button>
     </section>
 
-    <section class="collection explorar-perfis" id="collection-patterns" aria-labelledby="patterns-title">
+    <section class="collection explorar-perfis hidden" id="collection-patterns" aria-labelledby="patterns-title">
       <div class="section-heading"><h2 id="patterns-title">padrões e hipóteses...</h2><span id="patterns-count"></span></div>
       <div class="pastas-container" id="patterns-grid" aria-live="polite"></div>
+      <button class="btn-voltar" data-folder-back type="button">← voltar para as pastas</button>
     </section>
 
     <section class="results hidden" id="search-results" aria-live="polite">

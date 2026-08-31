@@ -28,7 +28,7 @@ O problema não é presumir que o SUAP seja inadequado. A questão é identifica
 
 ## Evidências disponíveis
 
-- `novo portal/02 - Pesquisa (UXR)/testes-de-usabilidade/01-servidores/notas/05 Ana Maria Teles.md`, **[13:22]**: Ana Maria relata que, em inscrições de cursos pelo SUAP, pessoas podem fazer cadastro e entender que concluíram a inscrição, ou não saber como acessar o procedimento.
+- Registro de teste de usabilidade, **[13:22]**: uma participante relata que, em inscrições de cursos pelo SUAP, pessoas podem fazer cadastro e entender que concluíram a inscrição, ou não saber como acessar o procedimento.
 
 ### Ainda a coletar
 

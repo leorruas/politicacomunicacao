@@ -41,7 +41,7 @@ O caso evidencia que existem fatos posteriores à premiação, mas eles não apa
 
 ## Evidências disponíveis
 
-- [Notícia da premiação — IFMG, 12 nov. 2024](https://www.ifmg.edu.br/portal/noticias/com-projeto-da-colmeia-inteligente-equipe-do-campus-ponte-nova-vence-a-v-olimpiada-de-inovacao) — confirma o 1º lugar, a parceria com o apicultor Ênio Milagres e a aprovação de financiamento para continuidade da pesquisa aplicada.
+- [Notícia da premiação — IFMG, 12 nov. 2024](https://www.ifmg.edu.br/portal/noticias/com-projeto-da-colmeia-inteligente-equipe-do-campus-ponte-nova-vence-a-v-olimpiada-de-inovacao) — confirma o 1º lugar, a parceria com um apicultor e a aprovação de financiamento para continuidade da pesquisa aplicada.
 - [Atualização do projeto — IFMG, 17 jun. 2025](https://www.ifmg.edu.br/portal/noticias/de-brincadeira-a-sucesso-projeto-do-ifmg-que-monitora-colmeias-conquista-premio-nacional/) — registra a continuidade do desenvolvimento, o teste do protótipo, o 3º lugar nacional e informações sobre sensores, aplicativo e custo estimado.
 - [Reportagem externa — Rádio Itatiaia, 21 jun. 2025](https://www.itatiaia.com.br/ouropreto/estudantes-do-ifmg-recebem-premiacao-nacional-com-projeto-para-apicultura) — repercussão externa da conquista nacional.
 - [Plano de trabalho institucional, 2026](https://suap.ifmg.edu.br/contratos/visualizar_arquivo/55009/) — prevê adaptar e implementar a Colmeia Inteligente em São Gonçalo do Rio Abaixo; confirmar a situação atual da execução antes de divulgar como resultado alcançado.

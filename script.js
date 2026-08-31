@@ -7,6 +7,7 @@ const FOLDERS = [
 
 let articles = [];
 let activeArticle = null;
+let activeFolder = null;
 const byId = id => document.getElementById(id);
 const normalize = text => text.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
 
@@ -50,6 +51,36 @@ function renderCollections() {
     const grid = byId(folder.grid); grid.replaceChildren(...matching.map(card));
     byId(folder.count).textContent = `${matching.length} registros`;
   });
+  const folders = FOLDERS.map(folder => {
+    const total = articles.filter(article => article.type === folder.key).length;
+    const item = document.createElement("a");
+    item.className = "perfil-card perfil-fundamentos";
+    item.href = `#${folder.key}`;
+    item.innerHTML = `<span class="perfil-card-icone" aria-hidden="true">◆</span><span class="perfil-card-conteudo"><strong>${folder.key === "case" ? "cases" : "padrões e hipóteses"}</strong><span class="indice-resumo">${folder.key === "case" ? "situações concretas, evidências e perguntas para a política" : "leituras provisórias que atravessam mais de um caso"}</span></span><span class="perfil-card-meta"><b>${total}</b> registros</span>`;
+    item.addEventListener("click", event => { event.preventDefault(); openFolder(folder.key); });
+    return item;
+  });
+  byId("folders-grid").replaceChildren(...folders);
+}
+function openFolder(key, updateHash = true) {
+  activeFolder = key;
+  byId("folders-home").classList.add("hidden");
+  byId("collection-cases").classList.toggle("hidden", key !== "case");
+  byId("collection-patterns").classList.toggle("hidden", key !== "pattern");
+  byId("search-results").classList.add("hidden");
+  byId("reader").classList.add("hidden");
+  if (updateHash) history.pushState({ folder: key }, "", `#${key}`);
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+function returnToFolders() {
+  activeFolder = null;
+  byId("folders-home").classList.remove("hidden");
+  byId("collection-cases").classList.add("hidden");
+  byId("collection-patterns").classList.add("hidden");
+  byId("search-results").classList.add("hidden");
+  byId("reader").classList.add("hidden");
+  byId("main-search-input").value = ""; byId("nav-search-input").value = "";
+  history.pushState({}, "", "#acervo"); window.scrollTo({ top: 0, behavior: "smooth" });
 }
 function setSearch(value) {
   byId("main-search-input").value = value;
@@ -57,8 +88,9 @@ function setSearch(value) {
   const term = normalize(value.trim());
   const results = term.length < 3 ? [] : articles.filter(article => normalize(`${article.title} ${article.summary} ${article.content}`).includes(term));
   byId("search-results").classList.toggle("hidden", term.length < 3);
-  byId("collection-cases").classList.toggle("hidden", term.length >= 3);
-  byId("collection-patterns").classList.toggle("hidden", term.length >= 3);
+  byId("folders-home").classList.toggle("hidden", term.length >= 3);
+  byId("collection-cases").classList.add("hidden");
+  byId("collection-patterns").classList.add("hidden");
   if (term.length >= 3) { byId("results-grid").replaceChildren(...results.map(card)); byId("results-count").textContent = `${results.length} encontrados`; }
 }
 function markdownWithLinks(content) {
@@ -73,6 +105,7 @@ function openArticle(article, updateHash = true) {
   activeArticle = article;
   byId("reader").classList.remove("hidden");
   byId("search-results").classList.add("hidden");
+  byId("folders-home").classList.add("hidden");
   byId("collection-cases").classList.add("hidden");
   byId("collection-patterns").classList.add("hidden");
   byId("article-title").textContent = article.title;
@@ -88,8 +121,8 @@ function openArticle(article, updateHash = true) {
   window.scrollTo({ top: 0, behavior: "smooth" });
 }
 function returnToCollection() {
-  activeArticle = null; byId("reader").classList.add("hidden"); byId("collection-cases").classList.remove("hidden"); byId("collection-patterns").classList.remove("hidden");
-  byId("main-search-input").value = ""; byId("nav-search-input").value = ""; history.pushState({}, "", "#acervo"); byId("acervo").scrollIntoView({ behavior:"smooth" });
+  activeArticle = null; byId("reader").classList.add("hidden");
+  if (activeFolder) { openFolder(activeFolder); } else { returnToFolders(); }
 }
 function initTheme() { const saved = localStorage.getItem("tema-politica-comunicacao"); const theme = saved || (matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark"); document.documentElement.dataset.theme = theme; }
 
@@ -97,11 +130,12 @@ async function init() {
   initTheme();
   FOLDERS.forEach(folder => byId(folder.grid).append(byId("loading-card").content.cloneNode(true)));
   try { articles = (await Promise.all(FOLDERS.map(async folder => (await Promise.all((await listMarkdown(folder)).map(entry => loadArticle(entry, folder))))))).flat().sort((a,b) => a.title.localeCompare(b.title, "pt-BR")); renderCollections();
-    const path = decodeURIComponent(location.hash.slice(1)); const initial = articles.find(article => article.sourcePath === path); if (initial) openArticle(initial, false);
+    const path = decodeURIComponent(location.hash.slice(1)); const initial = articles.find(article => article.sourcePath === path); if (initial) { activeFolder = initial.type; openArticle(initial, false); } else if (path === "case" || path === "pattern") openFolder(path, false);
   } catch (error) { const message = error?.message || String(error); document.querySelectorAll(".pastas-container").forEach(grid => grid.innerHTML = `<p class="loading">${escapeHtml(message)} Tente recarregar a página.</p>`); }
   ["main-search-input", "nav-search-input"].forEach(id => byId(id).addEventListener("input", event => setSearch(event.target.value)));
   byId("back-button").addEventListener("click", returnToCollection);
+  document.querySelectorAll("[data-folder-back]").forEach(button => button.addEventListener("click", returnToFolders));
   byId("theme-toggle").addEventListener("click", () => { const next = document.documentElement.dataset.theme === "dark" ? "light" : "dark"; document.documentElement.dataset.theme = next; localStorage.setItem("tema-politica-comunicacao", next); });
 }
-window.addEventListener("popstate", () => { const path = decodeURIComponent(location.hash.slice(1)); const article = articles.find(item => item.sourcePath === path); article ? openArticle(article, false) : returnToCollection(); });
+window.addEventListener("popstate", () => { const path = decodeURIComponent(location.hash.slice(1)); const article = articles.find(item => item.sourcePath === path); if (article) { activeFolder = article.type; openArticle(article, false); } else if (path === "case" || path === "pattern") openFolder(path, false); else returnToFolders(); });
 window.addEventListener("DOMContentLoaded", init);

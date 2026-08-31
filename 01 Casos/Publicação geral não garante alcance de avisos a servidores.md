@@ -26,7 +26,7 @@ Uma participante informou que não costuma ler notícias do site principal de fo
 
 ## Evidências disponíveis
 
-- `novo portal/02 - Pesquisa (UXR)/testes-de-usabilidade/01-servidores/notas/09 Tatiana Toledo.md`, **[24:07]–[25:30]**: relato sobre consumo seletivo de notícias do portal e do e-mail de notícias.
+- Registro de teste de usabilidade, **[24:07]–[25:30]**: relato de uma participante sobre consumo seletivo de notícias do portal e do e-mail de notícias.
 
 ### Ainda a coletar
 

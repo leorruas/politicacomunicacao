@@ -41,9 +41,9 @@ O novo portal já endereça parte da estrutura de destaques e de encontrabilidad
 
 ## Evidências disponíveis
 
-- `novo portal/02 - Pesquisa (UXR)/entrevistas/02-comunicadores-campi/notas/11 Fernanda.md`, **[15:00]–[15:54]**: atualização de destaques, limitação de quatro espaços e reedição de notícia para manter visibilidade.
-- `novo portal/02 - Pesquisa (UXR)/entrevistas/02-comunicadores-campi/notas/06 Lorena.md`, linhas 31–34 e 44–50: etapas de editais saturam a home; a comunicadora opera 14 grupos segmentados de WhatsApp para informações locais.
-- `novo portal/02 - Pesquisa (UXR)/testes-de-usabilidade/01-servidores/notas/09 Tatiana Toledo.md`, **[24:07]–[25:30]**: a participante não lê amplamente notícias ou e-mail geral e abre conteúdos que reconhece como relevantes para si.
+- Registro de entrevista com comunicadora de campus, **[15:00]–[15:54]**: atualização de destaques, limitação de quatro espaços e reedição de notícia para manter visibilidade.
+- Registro de entrevista com comunicadora de campus, linhas 31–34 e 44–50: etapas de editais saturam a home; a comunicadora opera 14 grupos segmentados de WhatsApp para informações locais.
+- Registro de teste de usabilidade, **[24:07]–[25:30]**: uma participante não lê amplamente notícias ou e-mail geral e abre conteúdos que reconhece como relevantes para si.
 
 ### Ainda a coletar
 

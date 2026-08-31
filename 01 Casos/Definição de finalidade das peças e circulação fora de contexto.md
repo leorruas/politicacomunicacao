@@ -37,7 +37,7 @@ O ponto em análise não é a quantidade de texto em uma imagem, mas a relação
 
 - Relato inicial sobre o uso recorrente de peças com foto/manchete e detalhamento na legenda.
 - [[01 Casos/Concurso de mascote — duas peças e circulação no WhatsApp|Caso do concurso de mascote]], no qual duas peças com níveis distintos de informação e a circulação por WhatsApp tornam essa questão observável.
-- [[03 Referências IFMG/Comunicação pública e modalidades comunicacionais — excerto de Kunsch|Excerto de Margarida Kunsch]] enviado como apoio teórico inicial.
+- [[03 Referências IFMG/Comunicação pública e modalidades comunicacionais — excerto de Kunsch|Excerto de referência teórica]] enviado como apoio teórico inicial.
 
 ### Ainda a coletar
 
@@ -82,4 +82,4 @@ O ponto em análise não é a quantidade de texto em uma imagem, mas a relação
 - [[02 Padrões e hipóteses/Peças de chamada e peças de serviço]]
 - [[02 Padrões e hipóteses/Finalidade comunicacional, tipo de peça e contexto de circulação]]
 - [[01 Casos/Concurso de mascote — duas peças e circulação no WhatsApp]]
-- [[03 Referências IFMG/Comunicação pública e modalidades comunicacionais — excerto de Kunsch]]
+- [[03 Referências IFMG/Comunicação pública e modalidades comunicacionais — excerto de Kunsch|Referência teórica sobre comunicação pública]]
