@@ -1,36 +1,76 @@
-// Função para buscar automaticamente todos os arquivos .md do seu GitHub
+// Lista de arquivos e fallback estático imune a rate limit da API
+const ARQUIVOS_ESTATICOS = [
+  { path: "01 Casos/Olimpíada de Inovação — continuidade e visibilidade da Colmeia Inteligente.md", categoria: "Cases" },
+  { path: "01 Casos/Comunicação de ações cujo acesso ocorre pelo SUAP.md", categoria: "Cases" },
+  { path: "01 Casos/Eventos cadastrados no SUAP sem fluxo definido de divulgação no portal.md", categoria: "Cases" },
+  { path: "01 Casos/Concurso de mascote — duas peças e circulação no WhatsApp.md", categoria: "Cases" },
+  { path: "01 Casos/Critérios para escolha, prioridade e combinação de canais institucionais.md", categoria: "Cases" },
+  { path: "01 Casos/Reclamação via Fala.BR — limites legais e governança da informação de serviço no portal.md", categoria: "Cases" },
+  { path: "01 Casos/Resultados da CPA — acompanhamento, interpretação e devolutiva.md", categoria: "Cases" },
+  { path: "01 Casos/Portal unificado — distribuição de notícias institucionais e locais.md", categoria: "Cases" },
+  { path: "01 Casos/Definição de finalidade das peças e circulação fora de contexto.md", categoria: "Cases" },
+  { path: "01 Casos/Publicação geral não garante alcance de avisos a servidores.md", categoria: "Cases" },
+  { path: "01 Casos/Entrada de comunicadores de campus sem onboarding.md", categoria: "Cases" },
+  { path: "01 Casos/Sites promocionais para processos seletivos — Pós IA IFMG Formiga.md", categoria: "Cases" },
+  { path: "02 Padrões e hipóteses/Envolvimento antecipado e ativos reutilizáveis.md", categoria: "Padrões e hipóteses" },
+  { path: "02 Padrões e hipóteses/Peças de chamada e peças de serviço.md", categoria: "Padrões e hipóteses" },
+  { path: "02 Padrões e hipóteses/Finalidade comunicacional, tipo de peça e contexto de circulação.md", categoria: "Padrões e hipóteses" }
+];
+
 async function obterListaDeArquivos() {
+    // 1. Tenta carregar manifest.json relativo (ótimo para GitHub Pages ou servidor local)
+    try {
+        const resManifest = await fetch("manifest.json");
+        if (resManifest.ok) {
+            const itens = await resManifest.json();
+            return itens.map(item => ({
+                titulo: item.titulo || item.path.split("/").pop().replace(".md", ""),
+                path: encodeURI(item.path),
+                sourcePath: item.path,
+                categoria: item.categoria
+            }));
+        }
+    } catch (e) {
+        // segue para os próximos métodos
+    }
+
+    // 2. Tenta a API do GitHub
     try {
         const resposta = await fetch("https://api.github.com/repos/leorruas/politicacomunicacao/git/trees/main?recursive=1");
-        if (!resposta.ok) throw new Error("Erro na API do GitHub");
-
-        const dados = await resposta.json();
-
-        // Considera estritamente as pastas solicitadas: 01 Casos e 02 Padrões e hipóteses
-        return dados.tree
-            .filter(item => {
-                if (item.type !== "blob" || !item.path.endsWith(".md")) return false;
-                const p = item.path;
-                return p.startsWith("01 Casos/") || p.startsWith("02 Padrões e hipóteses/") || p.startsWith("02 Padroes e hipoteses/");
-            })
-            .map(item => {
-                const nomeSemExtensao = item.path.split("/").pop().replace(".md", "");
-                const partes = item.path.split("/");
-                let categoria = "Outros";
-                if (partes[0].startsWith("01")) categoria = "Cases";
-                else if (partes[0].startsWith("02")) categoria = "Padrões e hipóteses";
-
-                return {
-                    titulo: nomeSemExtensao,
-                    path: encodeURI(`https://raw.githubusercontent.com/leorruas/politicacomunicacao/main/${item.path}`),
-                    sourcePath: item.path,
-                    categoria: categoria
-                };
-            });
-    } catch (erro) {
-        console.warn("Não foi possível carregar o índice da política de comunicação:", erro);
-        return [];
+        if (resposta.ok) {
+            const dados = await resposta.json();
+            if (Array.isArray(dados.tree)) {
+                return dados.tree
+                    .filter(item => {
+                        if (item.type !== "blob" || !item.path.endsWith(".md")) return false;
+                        const p = item.path.normalize("NFD");
+                        return p.startsWith("01 Casos/") || p.startsWith("02 Padr");
+                    })
+                    .map(item => {
+                        const nomeSemExtensao = item.path.split("/").pop().replace(".md", "");
+                        const partes = item.path.split("/");
+                        let categoria = "Cases";
+                        if (partes[0].startsWith("02")) categoria = "Padrões e hipóteses";
+                        return {
+                            titulo: nomeSemExtensao,
+                            path: encodeURI(item.path),
+                            sourcePath: item.path,
+                            categoria: categoria
+                        };
+                    });
+            }
+        }
+    } catch (e) {
+        console.warn("API do GitHub inacessível, usando lista estática do repositório.");
     }
+
+    // 3. Fallback estático garantido
+    return ARQUIVOS_ESTATICOS.map(item => ({
+        titulo: item.path.split("/").pop().replace(".md", ""),
+        path: encodeURI(item.path),
+        sourcePath: item.path,
+        categoria: item.categoria
+    }));
 }
 
 // Variáveis globais
@@ -144,7 +184,12 @@ async function carregarTodosOsArtigos() {
 
     const promessas = lista.map(async (item) => {
         try {
-            const res = await fetch(item.path);
+            // Tenta caminho relativo (local/Pages), e se falhar tenta raw github
+            let res = await fetch(item.path);
+            if (!res.ok) {
+                const rawUrl = `https://raw.githubusercontent.com/leorruas/politicacomunicacao/main/${item.sourcePath.split("/").map(encodeURIComponent).join("/")}`;
+                res = await fetch(rawUrl);
+            }
             if (!res.ok) return null;
             const texto = await res.text();
 
