@@ -36,7 +36,7 @@ O ponto de interesse para a política não é presumir que todo evento deva apar
 
 ## Evidências disponíveis
 
-- `novo portal/02 - Pesquisa (UXR)/descoberta/11 - relatorio-insights-portal.md`, seção **“Evidência qualitativa”**: registra que Silvana informou que eventos cadastrados no SUAP geram link, mas não são divulgados no portal.
+- Relatório de descoberta do novo portal, seção **“Evidência qualitativa”**: registra o relato de uma participante de que eventos cadastrados no SUAP geram link, mas não são divulgados no portal.
 - A síntese qualifica esse achado como exploratório, vindo de uma participante, e recomenda novos testes; a nota de origem disponível não preserva a minutagem desse trecho.
 
 ### Ainda a coletar
