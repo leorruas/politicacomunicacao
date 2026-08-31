@@ -11,7 +11,7 @@ const ARQUIVOS_ESTATICOS = [
   { path: "01 Casos/Definição de finalidade das peças e circulação fora de contexto.md", categoria: "Cases" },
   { path: "01 Casos/Publicação geral não garante alcance de avisos a servidores.md", categoria: "Cases" },
   { path: "01 Casos/Entrada de comunicadores de campus sem onboarding.md", categoria: "Cases" },
-  { path: "01 Casos/Sites promocionais para processos seletivos — Pós IA IFMG Formiga.md", categoria: "Cases" },
+  { path: "01 Casos/Sites e plataformas externas — vínculo e chancela institucional.md", categoria: "Cases" },
   { path: "02 Padrões e hipóteses/Envolvimento antecipado e ativos reutilizáveis.md", categoria: "Padrões e hipóteses" },
   { path: "02 Padrões e hipóteses/Peças de chamada e peças de serviço.md", categoria: "Padrões e hipóteses" },
   { path: "02 Padrões e hipóteses/Finalidade comunicacional, tipo de peça e contexto de circulação.md", categoria: "Padrões e hipóteses" }
