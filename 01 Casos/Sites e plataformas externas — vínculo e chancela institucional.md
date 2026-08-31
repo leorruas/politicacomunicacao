@@ -3,15 +3,16 @@ tipo: caso
 status: em-observacao
 data-registro: 2026-08-27
 tema:
-  - processo-seletivo
   - comunicacao-de-servico
-  - sites-promocionais
+  - sites-e-plataformas-externas
   - plataformas-digitais-externas
-  - jornada-de-inscricao
+  - chancela-institucional
   - governanca-digital
 canal:
   - hotsite
   - portal
+  - noticia
+  - plataforma-externa
   - edital
   - formulario-de-inscricao
   - email
@@ -24,7 +25,7 @@ areas-envolvidas:
 evidencias: publica-e-a-complementar
 ---
 
-# Sites promocionais para processos seletivos — Pós IA IFMG Formiga e Nosso IFMG Ouro Preto
+# Sites e plataformas externas — vínculo e chancela institucional
 
 > [!caso] Resumo do caso
 > O site da pós-graduação em Inteligência Artificial do IFMG Campus Formiga organiza, em uma experiência própria, a apresentação do curso e a jornada do processo seletivo e está vinculado a partir do site institucional do campus. O endereço Nosso IFMG Ouro Preto traz outro exemplo de site próprio no domínio do campus; o Ecossistema de Formação Continuada de Professores foi divulgado em notícia oficial com link para uma plataforma externa. O caso convida a definir quando esses sites ou plataformas são justificáveis, como se articulam às fontes oficiais e quem responde por sua atualização, acessibilidade, suporte e encerramento.
