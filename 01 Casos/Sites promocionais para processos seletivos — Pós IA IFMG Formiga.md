@@ -6,6 +6,7 @@ tema:
   - processo-seletivo
   - comunicacao-de-servico
   - sites-promocionais
+  - plataformas-digitais-externas
   - jornada-de-inscricao
   - governanca-digital
 canal:
@@ -26,7 +27,7 @@ evidencias: publica-e-a-complementar
 # Sites promocionais para processos seletivos — Pós IA IFMG Formiga e Nosso IFMG Ouro Preto
 
 > [!caso] Resumo do caso
-> O site da pós-graduação em Inteligência Artificial do IFMG Campus Formiga organiza, em uma experiência própria, a apresentação do curso e a jornada do processo seletivo e está vinculado a partir do site institucional do campus. O endereço Nosso IFMG Ouro Preto traz outro exemplo de site próprio no domínio do campus. O caso convida a definir quando esses sites promocionais são justificáveis, como se articulam às fontes oficiais — especialmente edital e portal de processos seletivos — e quem responde por sua atualização, acessibilidade, suporte e encerramento após cada seleção.
+> O site da pós-graduação em Inteligência Artificial do IFMG Campus Formiga organiza, em uma experiência própria, a apresentação do curso e a jornada do processo seletivo e está vinculado a partir do site institucional do campus. O endereço Nosso IFMG Ouro Preto traz outro exemplo de site próprio no domínio do campus; o Ecossistema de Formação Continuada de Professores foi divulgado em notícia oficial com link para uma plataforma externa. O caso convida a definir quando esses sites ou plataformas são justificáveis, como se articulam às fontes oficiais e quem responde por sua atualização, acessibilidade, suporte e encerramento.
 
 ## Contexto e objetivo de comunicação
 
@@ -45,10 +46,13 @@ Ainda é preciso entender se a criação de sites promocionais é uma prática i
 
 O endereço [Nosso IFMG Ouro Preto](https://nossoifmg.ouropreto.ifmg.edu.br/) constitui um segundo exemplo a mapear. Por estar sob subdomínio `ouropreto.ifmg.edu.br`, ele exige análise distinta do site de Formiga: é necessário identificar sua finalidade, conteúdo, vínculo com processos seletivos, responsáveis e regras de integração com o portal institucional do campus.
 
+Um terceiro exemplo amplia o caso para além de processos seletivos. A notícia [IFMG lança ecossistema digital para formação continuada de professores da educação básica](https://www.ifmg.edu.br/portal/noticias/ifmg-lanca-ecossistema-digital-para-formacao-continuada-de-professores-da-educacao-basica), publicada no portal institucional em 24 de abril de 2026, anuncia o Ecossistema de Formação Continuada de Professores e orienta o acesso pelo endereço externo `www.ecossistemadeformacao.com`. A notícia descreve cursos, eventos, projetos e materiais disponíveis na plataforma. Essa publicação funciona como chancela institucional e como rota de entrada do público para o ambiente externo; por isso, a decisão de noticiar e vincular a iniciativa também demanda clareza sobre autoria, responsabilidade, manutenção e relação com as fontes institucionais.
+
 ## Evidências disponíveis
 
 - [Pós IA — IFMG Campus Formiga](https://posifmg.ia.br/) — reúne informações sobre curso, vagas, ingresso, calendário, FAQ, contato e links para fontes oficiais; informa que o edital prevalece e referencia a página institucional do curso.
 - [Nosso IFMG Ouro Preto](https://nossoifmg.ouropreto.ifmg.edu.br/) — segundo endereço a ser caracterizado quanto à finalidade, à gestão e à relação com o portal e os processos seletivos do campus.
+- [Notícia sobre o Ecossistema de Formação Continuada de Professores — IFMG, 24 abr. 2026](https://www.ifmg.edu.br/portal/noticias/ifmg-lanca-ecossistema-digital-para-formacao-continuada-de-professores-da-educacao-basica) — divulga a plataforma externa `www.ecossistemadeformacao.com` como ambiente de acesso a cursos, eventos, projetos e materiais didáticos.
 
 ### Ainda a coletar
 
@@ -59,6 +63,7 @@ O endereço [Nosso IFMG Ouro Preto](https://nossoifmg.ouropreto.ifmg.edu.br/) co
 - [ ] Custos, ferramentas, aprovações e requisitos técnicos, jurídicos, de privacidade e acessibilidade envolvidos.
 - [ ] Inventário de outros sites promocionais do IFMG e definição de quais permanecem ativos após cada processo seletivo.
 - [ ] Mapeamento do conteúdo, público, percurso de acesso, responsáveis e tecnologias do Nosso IFMG Ouro Preto.
+- [ ] Mapeamento do Ecossistema de Formação Continuada de Professores: domínio, responsáveis, fontes de conteúdo, público, requisitos de acessibilidade e relação com a notícia e demais canais do IFMG.
 
 ## Hipóteses a investigar
 
@@ -72,6 +77,9 @@ O endereço [Nosso IFMG Ouro Preto](https://nossoifmg.ouropreto.ifmg.edu.br/) co
 > Vincular um site promocional a partir de uma página institucional pode ser entendido pelo público como chancela institucional; sem critérios, responsabilidades e revisão, isso pode transferir risco editorial e tecnológico para o portal do campus.
 
 > [!hipotese]
+> A publicação de uma notícia institucional que direciona para uma plataforma externa também pode produzir chancela percebida. Essa decisão pode ser adequada para dar visibilidade a uma iniciativa, mas precisa estar acompanhada de critérios sobre vínculo institucional, responsabilidades e manutenção do destino indicado.
+
+> [!hipotese]
 > Um padrão institucional reutilizável para sites de seleção pode acelerar a criação e preservar qualidade, desde que não substitua o portal oficial, nem fragmente a governança tecnológica ou torne opaca a responsabilidade pelo conteúdo.
 
 ## Impactos ou riscos percebidos
@@ -79,6 +87,7 @@ O endereço [Nosso IFMG Ouro Preto](https://nossoifmg.ouropreto.ifmg.edu.br/) co
 - Jornada mais clara para candidatos, com possível redução de dúvidas repetidas e abandono.
 - Informações conflitantes entre hotsite, edital, portal, formulário e canais de atendimento.
 - Chancela percebida de uma página institucional para um endereço externo, sem transparência sobre responsabilidade e manutenção.
+- Notícia institucional permanecer disponível como rota de entrada para uma plataforma externa desatualizada, indisponível ou sem responsável identificável.
 - Dependência de pessoas ou soluções locais sem continuidade de atualização e suporte.
 - Necessidade de garantir acessibilidade, privacidade, integridade de links e preservação da memória do processo seletivo.
 
@@ -89,6 +98,7 @@ O endereço [Nosso IFMG Ouro Preto](https://nossoifmg.ouropreto.ifmg.edu.br/) co
 3. Quem aprova a criação e a vinculação, e quem produz, revisa e atualiza o conteúdo durante todo o ciclo seletivo?
 4. Quais requisitos mínimos de acessibilidade, privacidade, segurança, domínio, hospedagem, métricas e suporte devem ser atendidos?
 5. Como o IFMG deve encerrar, arquivar ou reaproveitar o site quando a seleção terminar?
+6. Que critérios devem orientar a divulgação, em notícia institucional, de plataformas externas vinculadas a projetos, e quais informações mínimas sobre autoria, vínculo e manutenção devem acompanhar essa chancela?
 
 ## Ligações
 
