@@ -812,15 +812,12 @@ function processarLinksObsidian() {
     artigoCorpo.innerHTML = htmlAtual.replace(regexObsidian, (match, caminho, textoExibicao) => {
         const destino = caminho || textoExibicao;
         const rotulo = textoExibicao || destino;
-        return `<a href="#" class="obsidian-link" data-destino="${destino}">${rotulo}</a>`;
-    });
+        const resolvido = resolverLinkObsidian(destino);
+        if (!resolvido) {
+            return `<span class="obsidian-link-indisponivel" title="Destino não encontrado no acervo">${escaparHtml(rotulo)}</span>`;
+        }
 
-    artigoCorpo.querySelectorAll(".obsidian-link").forEach(link => {
-        link.addEventListener("click", (e) => {
-            e.preventDefault();
-            const destino = link.getAttribute("data-destino");
-            navegarParaLinkObsidian(destino);
-        });
+        return `<a href="${escaparHtml(resolvido.href)}" class="obsidian-link">${escaparHtml(rotulo)}</a>`;
     });
 }
 
@@ -868,23 +865,51 @@ function processarCalloutsObsidian() {
     });
 }
 
-function navegarParaLinkObsidian(nomeOuCaminho) {
-    const normalizar = (str) => str.trim().toLowerCase().replace(/:/g, " -").replace(/\s+/g, " ");
-    const limpo = normalizar(nomeOuCaminho);
-    
-    const encontrado = todosOsArtigos.find(a => {
-        const tituloMatch = normalizar(a.titulo) === limpo;
-        const caminhoFonte = a.sourcePath || a.path;
-        const nomeArquivo = normalizar(decodeURI(caminhoFonte).split("/").pop().replace(".md", ""));
-        const caminhoSemExtensao = normalizar(decodeURI(caminhoFonte).replace("./", "").replace(/\.md$/, ""));
-        return tituloMatch || nomeArquivo === limpo || caminhoSemExtensao === limpo;
+function normalizarDestinoObsidian(valor) {
+    return decodeURIComponent(String(valor || ""))
+        .trim()
+        .replace(/\\/g, "/")
+        .replace(/\.md$/i, "")
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .toLocaleLowerCase("pt-BR")
+        .replace(/:/g, " -")
+        .replace(/\s+/g, " ");
+}
+
+function idDaSecaoObsidian(secao) {
+    return normalizarDestinoObsidian(secao)
+        .replace(/[^a-z0-9\s-]/g, "")
+        .trim()
+        .replace(/\s+/g, "-");
+}
+
+function resolverLinkObsidian(destino) {
+    const [caminhoBruto, secaoBruta] = String(destino || "").split(/#(.+)/, 2);
+    const caminho = caminhoBruto.trim().replace(/\\/g, "/");
+    if (/\.(pdf|png|jpe?g|gif|webp|svg|docx?|xlsx?|pptx?)$/i.test(caminho)) {
+        return null;
+    }
+
+    const caminhoNormalizado = normalizarDestinoObsidian(caminho);
+    const artigo = todosOsArtigos.find(item => {
+        const caminhoFonte = decodeURI(item.sourcePath || item.path).replace(/\.md$/i, "");
+        const caminhosPossiveis = [item.titulo, caminhoFonte, caminhoFonte.split("/").at(-1)];
+        return caminhosPossiveis.some(candidato => normalizarDestinoObsidian(candidato) === caminhoNormalizado);
     });
 
-    if (encontrado) {
-        abrirArtigo(encontrado.titulo, encontrado.conteudo);
-    } else {
+    if (!artigo) return null;
+    const secao = secaoBruta ? idDaSecaoObsidian(secaoBruta) : "";
+    return { artigo, arquivo: false, href: rotaComSecao(artigo, secao) };
+}
+
+function navegarParaLinkObsidian(nomeOuCaminho) {
+    const resolvido = resolverLinkObsidian(nomeOuCaminho);
+    if (!resolvido) {
         console.warn("Registro não encontrado para o link Obsidian:", nomeOuCaminho);
+        return;
     }
+    window.location.hash = resolvido.href.slice(1);
 }
 
 function tratarRotaDaUrl() {
