@@ -1,5 +1,19 @@
 # Regras do repositório
 
+## Finalidade e postura de trabalho
+
+O acervo reúne e organiza casos para ampliar a pesquisa que pode subsidiar a construção da Política de Comunicação do IFMG. Ele serve à observação, documentação e formulação de perguntas; não representa decisão, aprovação nem imposição de regras.
+
+Ao criar, editar ou resumir conteúdo:
+
+- registre fatos e evidências antes de apresentar conclusões;
+- trate interpretações como hipóteses verificáveis;
+- evite personalizar problemas sistêmicos ou atribuir culpa a indivíduos;
+- use os casos para orientar escuta e desenho de processos, não para fiscalizar pessoas;
+- deixe claro que uma futura política deve ser construída com participação e governança apropriadas.
+
+Conexões com outras frentes de pesquisa — por exemplo, encontrabilidade, jornada de informação ou dados de acesso do projeto do novo portal — são investigações possíveis, não conclusões prontas.
+
 ## Escopo público
 
 Este repositório alimenta uma página pública no GitHub Pages. Devem permanecer públicos somente:
