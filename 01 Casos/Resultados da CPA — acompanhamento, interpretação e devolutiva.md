@@ -84,4 +84,6 @@ O achado não permite atribuir causas nem responsabilizar uma equipe isoladament
 
 - [[01 Casos/Critérios para escolha, prioridade e combinação de canais institucionais]]
 - [[01 Casos/Portal unificado — distribuição de notícias institucionais e locais]]
+- [[01 Casos/Plano de comunicação — escopo, hierarquia e corresponsabilidade]]
+- [[02 Padrões e hipóteses/Autoridade técnica e corresponsabilidade na Comunicação institucional]]
 - [[02 Padrões e hipóteses/Finalidade comunicacional, tipo de peça e contexto de circulação]]

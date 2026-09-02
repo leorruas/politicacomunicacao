@@ -59,6 +59,12 @@ Como referência para discussão — e não como estrutura já aprovada — o re
 
 Nessa formulação, a Política estabelece princípios, papéis e governança. A estratégia ou plano organiza objetivos, públicos, prioridades, resultados esperados e critérios de avaliação. Os planos táticos ou temáticos desdobram frentes, campanhas, canais e recursos. Ações e entregas materializam esse planejamento em produtos, publicações, eventos, serviços ou outras iniciativas situadas.
 
+## Branding e transversalidade a discutir
+
+Uma definição de *branding* pode ajudar a não reduzir a Comunicação à divulgação ou ao marketing institucional. Neste acervo, o termo é proposto provisoriamente para designar o trabalho continuado de construir, aplicar e cuidar dos significados, da identidade, da expressão e da experiência institucional nos diferentes pontos de contato com os públicos. Ele pode incluir identidade visual e linguagem, mas não se limita a campanhas, peças promocionais ou à visibilidade de uma ação.
+
+Essa dimensão atravessa decisões de várias áreas. A Comunicação pode responder por competências técnicas e por aspectos comunicacionais de sua implementação, mas decisões sobre comunicação não pertencem somente a ela: dependem também de informações, prioridades, serviços, políticas, processos e responsabilidades de áreas proponentes, gestão, planejamento, avaliação, TI e campi. O caso da CPA torna essa relação observável: resultados de avaliação sobre Comunicação com a Sociedade demandam interpretação e possíveis respostas compartilhadas, não apenas uma ação isolada da equipe de Comunicação.
+
 ## Princípio de corresponsabilidade a discutir
 
 Gestores devem envolver a Comunicação na definição das estratégias institucionais que tenham dimensão comunicacional, em vez de apenas repassar decisões prontas para divulgação. Essa participação deve permitir contribuir para a definição de objetivos, públicos, prioridades, resultados esperados e critérios de avaliação. A responsabilidade não se concentra em uma única equipe: a gestão responde pelas decisões e prioridades institucionais, e a Comunicação participa da construção de sua dimensão comunicacional e de seus desdobramentos.
@@ -70,10 +76,13 @@ Gestores devem envolver a Comunicação na definição das estratégias instituc
 3. Quais responsabilidades cabem a gestores, áreas proponentes e equipes de Comunicação em cada camada de planejamento?
 4. Como registrar objetivos, públicos, prioridades, resultados esperados e critérios de avaliação antes de escolher campanhas, canais ou peças?
 5. Que fluxo pode assegurar corresponsabilidade sem centralizar indevidamente todas as iniciativas na Comunicação?
+6. Que definição de branding ajuda a reconhecer a responsabilidade estratégica da Comunicação sem reduzi-la a marketing institucional ou divulgação?
+7. Como integrar Comunicação, avaliação, planejamento, gestão, áreas proponentes, TI e campi em decisões que tenham dimensão comunicacional?
 
 ## Ligações
 
 - [[01 Casos/Critérios para escolha, prioridade e combinação de canais institucionais]]
 - [[01 Casos/Definição de finalidade das peças e circulação fora de contexto]]
+- [[01 Casos/Resultados da CPA — acompanhamento, interpretação e devolutiva]]
 - [[02 Padrões e hipóteses/Envolvimento antecipado e ativos reutilizáveis]]
 - [[02 Padrões e hipóteses/Autoridade técnica e corresponsabilidade na Comunicação institucional]]
