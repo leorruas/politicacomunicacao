@@ -18,6 +18,7 @@ Dois casos apontam para uma questão de governança que ultrapassa uma peça, ca
 | Comunicação institucional | A Comunicação: aplicação da marca, identidade visual, tipografia, linguagem, hierarquia da informação, acessibilidade, adequação aos canais e coerência institucional. |
 | Estratégia com dimensão comunicacional | Gestão e área proponente, com participação da Comunicação: objetivos, públicos, prioridades, resultados esperados e critérios de avaliação. |
 | Avaliação e melhoria | Comunicação, CPA, planejamento, gestão, áreas proponentes e campi: interpretação de evidências, definição de prioridades e acompanhamento de respostas. |
+| Coordenação em rede | Diretorias-Gerais, comunicadores de campus e Comunicação da Reitoria: pactuação de referências, apoio técnico, responsabilidades compartilhadas e escalonamento, sem pressupor chefia direta da Reitoria sobre os campi. |
 | Divergências relevantes | Instância de escalonamento a definir, especialmente diante de conflito institucional, autoridade administrativa ou risco reputacional. |
 
 ## Participação não é aprovação automática
@@ -38,3 +39,4 @@ Dois casos apontam para uma questão de governança que ultrapassa uma peça, ca
 - [[01 Casos/Plano de comunicação — escopo, hierarquia e corresponsabilidade]]
 - [[01 Casos/Identidade visual de evento — autonomia da área e responsabilidade institucional]]
 - [[01 Casos/Resultados da CPA — acompanhamento, interpretação e devolutiva]]
+- [[01 Casos/Vínculo dos comunicadores de campus e coordenação em rede]]

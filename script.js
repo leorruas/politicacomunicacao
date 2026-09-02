@@ -9,6 +9,7 @@ function anexoEhPublico(caminho) {
 }
 
 const ARQUIVOS_ESTATICOS = [
+  { path: "01 Casos/Vínculo dos comunicadores de campus e coordenação em rede.md", categoria: "Cases" },
   { path: "01 Casos/Governança de permissões e revisão editorial no portal.md", categoria: "Cases" },
   { path: "01 Casos/Módulo de chamados para Comunicação — formalização de demandas e prazos.md", categoria: "Cases" },
   { path: "01 Casos/Publicação antecipada fora da cadência editorial.md", categoria: "Cases" },
