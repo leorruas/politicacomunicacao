@@ -59,7 +59,9 @@ async function obterListaDeArquivos() {
                     .filter(item => {
                         if (item.type !== "blob" || !item.path.endsWith(".md")) return false;
                         const p = item.path.normalize("NFD");
-                        return p.startsWith("01 Casos/") || p.startsWith("02 Padr");
+                        const arquivo = item.path.split("/").pop();
+                        return (p.startsWith("01 Casos/") || p.startsWith("02 Padr"))
+                            && !arquivo.startsWith("Modelo de ");
                     })
                     .map(item => {
                         const nomeSemExtensao = item.path.split("/").pop().replace(".md", "");
