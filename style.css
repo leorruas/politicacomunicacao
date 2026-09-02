@@ -1395,6 +1395,7 @@ html body #artigo-corpo h3::before {
 .perfil-acao-conteudo { display: block; }
 .perfil-acao-conteudo strong { display: block; color: currentColor; font-size: 1.55rem; font-weight: 450; letter-spacing: -.04em; line-height: 1.03; }
 .perfil-acao-conteudo small, .perfil-acao-seta { display: none; }
+.perfil-acao-data { display: block; margin-top: 6px; color: var(--muted); font-size: .76rem; font-weight: 400; line-height: 1.2; letter-spacing: 0; }
 
 .artigo-layout-container { gap: 42px; }
 .artigo-toc-sidebar {

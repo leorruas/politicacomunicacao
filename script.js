@@ -202,6 +202,16 @@ function compararPorDataDeRegistro(a, b) {
     });
 }
 
+function formatarDataDeRegistro(data) {
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(data)) return "Data de registro não informada";
+    const [ano, mes, dia] = data.split("-").map(Number);
+    return new Intl.DateTimeFormat("pt-BR", {
+        day: "2-digit",
+        month: "short",
+        year: "numeric"
+    }).format(new Date(ano, mes - 1, dia));
+}
+
 async function carregarTodosOsArtigos() {
     const lista = await obterListaDeArquivos();
 
@@ -459,7 +469,7 @@ function abrirPerfil(categoria, atualizarRota = true) {
         acao.href = `#/${rotaDoArtigo(artigo).split("/").map(encodeURIComponent).join("/")}`;
         acao.setAttribute("aria-label", tituloDaAcao(artigo.titulo));
         const num = String(idx + 1).padStart(2, "0");
-        acao.innerHTML = `<span class="perfil-acao-numero">${num}</span><span class="perfil-acao-conteudo"><strong>${escaparHtml(tituloDaAcao(artigo.titulo))}</strong></span>`;
+        acao.innerHTML = `<span class="perfil-acao-numero">${num}</span><span class="perfil-acao-conteudo"><strong>${escaparHtml(tituloDaAcao(artigo.titulo))}</strong><span class="perfil-acao-data">registrado em ${escaparHtml(formatarDataDeRegistro(artigo.data))}</span></span>`;
         acao.addEventListener("click", (event) => {
             if (event.metaKey || event.ctrlKey || event.shiftKey || event.button === 1) return;
             event.preventDefault();
