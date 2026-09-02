@@ -194,7 +194,7 @@ function extrairDataRegistro(conteudo) {
 function compararPorDataDeRegistro(a, b) {
     const dataA = /^\d{4}-\d{2}-\d{2}$/.test(a.data) ? a.data : "0000-00-00";
     const dataB = /^\d{4}-\d{2}-\d{2}$/.test(b.data) ? b.data : "0000-00-00";
-    return dataB.localeCompare(dataA) || a.titulo.localeCompare(b.titulo, "pt-BR", {
+    return dataA.localeCompare(dataB) || a.titulo.localeCompare(b.titulo, "pt-BR", {
         numeric: true,
         sensitivity: "base"
     });
