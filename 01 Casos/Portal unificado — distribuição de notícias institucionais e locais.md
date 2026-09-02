@@ -80,4 +80,6 @@ Ao mesmo tempo, determinados assuntos institucionais exigem explicação sobre a
 
 - [[01 Casos/Critérios para escolha, prioridade e combinação de canais institucionais]]
 - [[01 Casos/Definição de finalidade das peças e circulação fora de contexto]]
+- [[01 Casos/Governança de permissões e revisão editorial no portal]]
+- [[02 Padrões e hipóteses/Papéis, permissões e revisão editorial no portal]]
 - [[02 Padrões e hipóteses/Finalidade comunicacional, tipo de peça e contexto de circulação]]

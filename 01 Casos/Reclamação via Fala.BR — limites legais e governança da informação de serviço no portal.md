@@ -98,3 +98,5 @@ Há duas camadas que precisam permanecer separadas. A primeira é a qualidade da
 - [[01 Casos/Critérios para escolha, prioridade e combinação de canais institucionais]]
 - [[01 Casos/Comunicação de ações cujo acesso ocorre pelo SUAP]]
 - [[02 Padrões e hipóteses/Finalidade comunicacional, tipo de peça e contexto de circulação]]
+- [[01 Casos/Governança de permissões e revisão editorial no portal]]
+- [[02 Padrões e hipóteses/Papéis, permissões e revisão editorial no portal]]
