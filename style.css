@@ -550,6 +550,11 @@ button:hover {
     background-color: var(--accent-blue-alpha-15);
 }
 
+.referencia-nao-publicada {
+    color: var(--muted);
+    font-style: italic;
+}
+
 #artigo-corpo h1 {
     font-size: 1em;
     color: var(--accent-blue);

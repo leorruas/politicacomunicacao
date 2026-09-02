@@ -496,6 +496,7 @@ function abrirArtigo(titulo, conteudoMarkdown, atualizarRota = true) {
 
     processarCalloutsObsidian();
     processarLinksObsidian();
+    neutralizarReferenciasExternas();
     aprimorarImagensDoArtigo();
     aprimorarBlocosDePrompt();
 
@@ -795,14 +796,9 @@ function iniciarScrollSpy(headings) {
 }
 
 function converterImagensObsidian(markdown) {
-    const repositorioRaw = "https://raw.githubusercontent.com/leorruas/politicacomunicacao/main/";
     const regexEmbed = /!\[\[([^\]|]+)(?:\|([^\]]+))?\]\]/g;
 
-    return markdown.replace(regexEmbed, (match, caminho, descricao) => {
-        const caminhoNormalizado = caminho.trim().replace(/\\/g, "/");
-        const textoAlternativo = (descricao || caminhoNormalizado.split("/").pop()).trim();
-        return `![${textoAlternativo}](${encodeURI(repositorioRaw + caminhoNormalizado)})`;
-    });
+    return markdown.replace(regexEmbed, () => "> [!NOTE] Anexo mantido no vault de trabalho e não publicado nesta versão.");
 }
 
 function processarLinksObsidian() {
@@ -814,10 +810,23 @@ function processarLinksObsidian() {
         const rotulo = textoExibicao || destino;
         const resolvido = resolverLinkObsidian(destino);
         if (!resolvido) {
-            return `<span class="obsidian-link-indisponivel" title="Destino não encontrado no acervo">${escaparHtml(rotulo)}</span>`;
+            return '<span class="referencia-nao-publicada" title="Referência mantida somente no vault de trabalho">referência não publicada</span>';
         }
 
         return `<a href="${escaparHtml(resolvido.href)}" class="obsidian-link">${escaparHtml(rotulo)}</a>`;
+    });
+}
+
+function neutralizarReferenciasExternas() {
+    artigoCorpo.querySelectorAll('a[href]').forEach(link => {
+        const href = link.getAttribute('href') || "";
+        if (!/^https?:\/\//i.test(href)) return;
+
+        const mencao = document.createElement('span');
+        mencao.className = 'referencia-nao-publicada';
+        mencao.textContent = 'referência externa não publicada';
+        mencao.title = 'A fonte é mantida somente como referência no vault de trabalho';
+        link.replaceWith(mencao);
     });
 }
 
