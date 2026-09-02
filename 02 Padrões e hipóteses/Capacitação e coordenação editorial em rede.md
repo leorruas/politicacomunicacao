@@ -9,7 +9,7 @@ data-registro: 2026-09-02
 Dois casos indicam que pessoas que assumem publicação ou outras atividades de Comunicação nos campi podem precisar de apoio que ultrapassa o acesso técnico aos canais. A hipótese é inicial e precisa ser confrontada com a diversidade de funções, recursos e rotinas do IFMG; ela não pressupõe que todas as pessoas tenham a mesma formação, atribuição ou grau de autonomia.
 
 > [!hipotese]
-> Onboarding, referências editoriais atualizadas e apoio contínuo podem ajudar uma rede de publicação a operar com autonomia responsável: compreender objetivos, respeitar cadências compartilhadas, adaptar o que for pertinente ao contexto local e escalar dúvidas ou exceções de maneira previsível.
+> Onboarding, referências editoriais atualizadas e apoio contínuo podem ajudar uma rede de publicação a operar com autonomia responsável: compreender objetivos, observar cadências definidas, adaptar o que for pertinente ao contexto local e escalar dúvidas ou exceções de maneira previsível. Disponibilizar um calendário não garante, por si só, que ele será compreendido e seguido.
 
 ## Componentes a investigar
 
