@@ -9,6 +9,8 @@ function anexoEhPublico(caminho) {
 }
 
 const ARQUIVOS_ESTATICOS = [
+  { path: "01 Casos/Identidade visual de evento — autonomia da área e responsabilidade institucional.md", categoria: "Cases" },
+  { path: "01 Casos/Plano de comunicação — escopo, hierarquia e corresponsabilidade.md", categoria: "Cases" },
   { path: "01 Casos/Olimpíada de Inovação — continuidade e visibilidade da Colmeia Inteligente.md", categoria: "Cases" },
   { path: "01 Casos/Comunicação de ações cujo acesso ocorre pelo SUAP.md", categoria: "Cases" },
   { path: "01 Casos/Eventos cadastrados no SUAP sem fluxo definido de divulgação no portal.md", categoria: "Cases" },
@@ -21,6 +23,7 @@ const ARQUIVOS_ESTATICOS = [
   { path: "01 Casos/Publicação geral não garante alcance de avisos a servidores.md", categoria: "Cases" },
   { path: "01 Casos/Entrada de comunicadores de campus sem onboarding.md", categoria: "Cases" },
   { path: "01 Casos/Sites e plataformas externas — vínculo e chancela institucional.md", categoria: "Cases" },
+  { path: "02 Padrões e hipóteses/Autoridade técnica e corresponsabilidade na Comunicação institucional.md", categoria: "Padrões e hipóteses" },
   { path: "02 Padrões e hipóteses/Envolvimento antecipado e ativos reutilizáveis.md", categoria: "Padrões e hipóteses" },
   { path: "02 Padrões e hipóteses/Peças de chamada e peças de serviço.md", categoria: "Padrões e hipóteses" },
   { path: "02 Padrões e hipóteses/Finalidade comunicacional, tipo de peça e contexto de circulação.md", categoria: "Padrões e hipóteses" }
@@ -188,6 +191,15 @@ function extrairDataRegistro(conteudo) {
     return conteudo.match(/data-registro:\s*([^\n]+)/)?.[1]?.trim() || "";
 }
 
+function compararPorDataDeRegistro(a, b) {
+    const dataA = /^\d{4}-\d{2}-\d{2}$/.test(a.data) ? a.data : "0000-00-00";
+    const dataB = /^\d{4}-\d{2}-\d{2}$/.test(b.data) ? b.data : "0000-00-00";
+    return dataB.localeCompare(dataA) || a.titulo.localeCompare(b.titulo, "pt-BR", {
+        numeric: true,
+        sensitivity: "base"
+    });
+}
+
 async function carregarTodosOsArtigos() {
     const lista = await obterListaDeArquivos();
 
@@ -229,10 +241,7 @@ async function carregarTodosOsArtigos() {
     });
 
     Object.values(todasAsPastas).forEach(artigos => {
-        artigos.sort((a, b) => a.titulo.localeCompare(b.titulo, "pt-BR", {
-            numeric: true,
-            sensitivity: "base"
-        }));
+        artigos.sort(compararPorDataDeRegistro);
     });
 
     renderizarPastas();

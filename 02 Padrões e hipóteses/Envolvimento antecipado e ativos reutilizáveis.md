@@ -1,6 +1,7 @@
 ---
 tipo: hipotese-transversal
 status: inicial
+data-registro: 2026-08-31
 ---
 
 # Envolvimento antecipado e ativos reutilizáveis
