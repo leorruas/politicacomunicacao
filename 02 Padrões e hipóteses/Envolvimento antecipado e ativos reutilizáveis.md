@@ -21,3 +21,4 @@ Iniciativas institucionais podem demandar Comunicação antes da etapa de divulg
 ## Caso relacionado
 
 - [[01 Casos/Concurso de mascote — duas peças e circulação no WhatsApp]]
+- [[01 Casos/Plano de comunicação — escopo, hierarquia e corresponsabilidade]]
