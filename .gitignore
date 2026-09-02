@@ -2,7 +2,9 @@
 .obsidian/
 00 Início/
 03 Referências IFMG/
-04 Dados e evidências/
+04 Dados e evidências/*
+!04 Dados e evidências/Anexos/
+!04 Dados e evidências/Anexos/*.png
 05 Para a consultoria/
 99 Arquivo/
 me.md

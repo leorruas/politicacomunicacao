@@ -1,4 +1,13 @@
 // Lista de arquivos e fallback estático imune a rate limit da API
+const ANEXOS_PUBLICOS = new Set([
+  "04 Dados e evidências/Anexos/acesso-ao-site-comunicadora-de-campus-2026-07-16.png",
+  "04 Dados e evidências/Anexos/desafio-criativo-ifmg-proex.png"
+]);
+
+function anexoEhPublico(caminho) {
+    return ANEXOS_PUBLICOS.has(caminho.trim().replace(/\\/g, "/"));
+}
+
 const ARQUIVOS_ESTATICOS = [
   { path: "01 Casos/Olimpíada de Inovação — continuidade e visibilidade da Colmeia Inteligente.md", categoria: "Cases" },
   { path: "01 Casos/Comunicação de ações cujo acesso ocorre pelo SUAP.md", categoria: "Cases" },
@@ -798,7 +807,14 @@ function iniciarScrollSpy(headings) {
 function converterImagensObsidian(markdown) {
     const regexEmbed = /!\[\[([^\]|]+)(?:\|([^\]]+))?\]\]/g;
 
-    return markdown.replace(regexEmbed, () => "> [!NOTE] Anexo mantido no vault de trabalho e não publicado nesta versão.");
+    return markdown.replace(regexEmbed, (match, caminho, descricao) => {
+        const caminhoNormalizado = caminho.trim().replace(/\\/g, "/");
+        if (!anexoEhPublico(caminhoNormalizado)) {
+            return "> [!NOTE] Anexo mantido no vault de trabalho e não publicado nesta versão.";
+        }
+        const textoAlternativo = (descricao || caminhoNormalizado.split("/").pop()).trim();
+        return `![${textoAlternativo}](${encodeURI(caminhoNormalizado)})`;
+    });
 }
 
 function processarLinksObsidian() {
@@ -813,7 +829,8 @@ function processarLinksObsidian() {
             return '<span class="referencia-nao-publicada" title="Referência mantida somente no vault de trabalho">referência não publicada</span>';
         }
 
-        return `<a href="${escaparHtml(resolvido.href)}" class="obsidian-link">${escaparHtml(rotulo)}</a>`;
+        const atributosDoArquivo = resolvido.arquivo ? ' target="_blank" rel="noopener noreferrer"' : "";
+        return `<a href="${escaparHtml(resolvido.href)}" class="obsidian-link"${atributosDoArquivo}>${escaparHtml(rotulo)}</a>`;
     });
 }
 
@@ -897,6 +914,9 @@ function resolverLinkObsidian(destino) {
     const [caminhoBruto, secaoBruta] = String(destino || "").split(/#(.+)/, 2);
     const caminho = caminhoBruto.trim().replace(/\\/g, "/");
     if (/\.(pdf|png|jpe?g|gif|webp|svg|docx?|xlsx?|pptx?)$/i.test(caminho)) {
+        if (anexoEhPublico(caminho)) {
+            return { arquivo: true, href: encodeURI(caminho) };
+        }
         return null;
     }
 
