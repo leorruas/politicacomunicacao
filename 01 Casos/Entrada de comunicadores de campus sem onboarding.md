@@ -30,6 +30,8 @@ O relato aponta que comunicadores de campus nem sempre são profissionais da ár
 
 Entre as dúvidas que podem surgir estão: como obter acesso ao site e a outros sistemas; como editar e publicar; como construir uma notícia; o que deve ser publicado ou republicado; em quais canais; e quais informações mínimas devem acompanhar cada divulgação.
 
+O onboarding também precisa considerar a estrutura de vínculo desses profissionais. Comunicadores de campus são coordenados pelas Diretorias-Gerais locais, e não subordinados diretamente à Comunicação da Reitoria. Portanto, o percurso de entrada não deve ser formulado como simples treinamento de uma equipe central: ele depende de responsabilidades pactuadas entre Diretoria-Geral, comunicador de campus e Comunicação da Reitoria, incluindo tempo de trabalho, acessos, referências técnicas, apoio e caminhos de escalonamento.
+
 ## Evidências disponíveis
 
 - Relato inicial sobre a experiência de uma comunicadora de campus e sobre a ausência de orientação estruturada para pessoas que assumem a função.
@@ -59,6 +61,9 @@ Entre as dúvidas que podem surgir estão: como obter acesso ao site e a outros 
 > [!hipotese]
 > Um percurso de entrada com checklists, modelos, instruções práticas e referência de apoio pode reduzir a curva de aprendizagem sem presumir formação prévia em comunicação.
 
+> [!hipotese]
+> Quando o vínculo administrativo é local, onboarding e apoio contínuo podem requerer pacto institucional sobre condições de atuação e responsabilidades, em vez de depender apenas de orientações emitidas pela Comunicação da Reitoria.
+
 ## Impactos ou riscos percebidos
 
 - Descontinuidade quando há troca de integrantes ou de comissões.
@@ -73,6 +78,7 @@ Entre as dúvidas que podem surgir estão: como obter acesso ao site e a outros 
 3. Quais rotinas editoriais devem ser padronizadas e quais podem ser adaptadas a cada campus?
 4. Como estruturar um onboarding vivo, fácil de atualizar e adequado a pessoas sem formação específica em comunicação?
 5. Que instância deve acolher dúvidas e manter esse material atualizado?
+6. Que responsabilidades cabem à Diretoria-Geral, ao comunicador de campus e à Comunicação da Reitoria para viabilizar a entrada e o apoio contínuo?
 
 ## Próximos passos de pesquisa
 
@@ -84,4 +90,5 @@ Entre as dúvidas que podem surgir estão: como obter acesso ao site e a outros 
 ## Ligações
 
 - [[01 Casos/Publicação antecipada fora da cadência editorial]]
+- [[01 Casos/Vínculo dos comunicadores de campus e coordenação em rede]]
 - [[02 Padrões e hipóteses/Capacitação e coordenação editorial em rede]]

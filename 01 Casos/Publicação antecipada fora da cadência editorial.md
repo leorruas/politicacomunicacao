@@ -33,6 +33,8 @@ O relato descreve uma tensão entre a preparação tática de uma divulgação �
 
 O fato de uma pessoa não ter formação específica em Comunicação não permite concluir incapacidade ou responsabilizá-la isoladamente pela situação. Ele torna relevante investigar se a designação para publicar vem acompanhada de onboarding, instruções acessíveis, critérios de exceção, acompanhamento e um canal de apoio. Também é necessário verificar como o calendário foi comunicado, se a antecipação gerou efeito observável e como a equipe deve prevenir ou tratar novos desvios de cadência.
 
+Como comunicadores de campus têm vínculo administrativo com as Diretorias-Gerais locais, a observância de uma cadência compartilhada não pode depender apenas de uma instrução da Comunicação da Reitoria. É preciso verificar como a estratégia é pactuada, em que condições o campus pode adaptar a circulação e que responsabilidades cabem às Diretorias-Gerais, aos comunicadores e à Comunicação da Reitoria para apoiar ou escalar exceções.
+
 ## Evidências disponíveis
 
 - Relato do usuário, registrado em conversa em 2 de setembro de 2026, sobre publicações antecipadas por pessoas que atuam em canais institucionais sem necessariamente terem formação em Comunicação.
@@ -56,6 +58,9 @@ O fato de uma pessoa não ter formação específica em Comunicação não permi
 > [!hipotese]
 > Uma rede de publicação pode preservar autonomia local quando diferencia claramente o que é calendário comum, o que pode ser contextualizado pelo campus e quais situações justificam antecipação ou outro desvio da cadência.
 
+> [!hipotese]
+> Em uma estrutura sem subordinação direta à Comunicação da Reitoria, a adesão a calendários comuns pode depender de acordos de governança e apoio das Diretorias-Gerais, além da comunicação da orientação às pessoas que publicam.
+
 ## Impactos ou riscos percebidos
 
 - Perda de coerência entre peças, canais e momentos de uma campanha ou divulgação.
@@ -70,6 +75,7 @@ O fato de uma pessoa não ter formação específica em Comunicação não permi
 3. O que pode ser adaptado ou publicado localmente, e quais situações exigem coordenação prévia com a Comunicação?
 4. Que procedimento deve orientar urgências, antecipações, embargos e divergências em relação ao cronograma?
 5. Como o onboarding pode combinar acesso técnico, critérios editoriais, leitura de estratégia e apoio contínuo?
+6. Como pactuar calendários compartilhados entre Reitoria e campi, respeitando a autonomia local e definindo responsabilidades para exceções?
 
 ## Próximos passos de pesquisa
 
@@ -83,4 +89,5 @@ O fato de uma pessoa não ter formação específica em Comunicação não permi
 - [[01 Casos/Entrada de comunicadores de campus sem onboarding]]
 - [[01 Casos/Critérios para escolha, prioridade e combinação de canais institucionais]]
 - [[01 Casos/Plano de comunicação — escopo, hierarquia e corresponsabilidade]]
+- [[01 Casos/Vínculo dos comunicadores de campus e coordenação em rede]]
 - [[02 Padrões e hipóteses/Capacitação e coordenação editorial em rede]]
