@@ -80,3 +80,8 @@ Entre as dúvidas que podem surgir estão: como obter acesso ao site e a outros 
 - Reunir exemplos de dúvidas e tarefas recorrentes.
 - Listar o conteúdo mínimo de um kit de entrada para comunicadores de campus.
 - Verificar como garantir transição de acessos e memória quando a composição muda.
+
+## Ligações
+
+- [[01 Casos/Publicação antecipada fora da cadência editorial]]
+- [[02 Padrões e hipóteses/Capacitação e coordenação editorial em rede]]
