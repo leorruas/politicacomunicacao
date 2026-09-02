@@ -9,6 +9,7 @@ function anexoEhPublico(caminho) {
 }
 
 const ARQUIVOS_ESTATICOS = [
+  { path: "01 Casos/Módulo de chamados para Comunicação — formalização de demandas e prazos.md", categoria: "Cases" },
   { path: "01 Casos/Publicação antecipada fora da cadência editorial.md", categoria: "Cases" },
   { path: "01 Casos/Identidade visual de evento — autonomia da área e responsabilidade institucional.md", categoria: "Cases" },
   { path: "01 Casos/Plano de comunicação — escopo, hierarquia e corresponsabilidade.md", categoria: "Cases" },
