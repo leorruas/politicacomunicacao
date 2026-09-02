@@ -30,7 +30,11 @@ evidencias: relato-indireto
 
 O relato não permite verificar a peça, a fonte utilizada, as diretrizes de marca vigentes, quem tomou a decisão ou como a conversa se desenvolveu. Ele registra, porém, uma percepção de recorrência: áreas proponentes podem compreender a comunicação de suas iniciativas como objeto de decisão exclusiva delas e solicitar que materiais sejam feitos segundo preferências próprias.
 
-A leitura de governança em discussão é que a área proponente conhece o evento, seus objetivos e necessidades, mas não é necessariamente a única responsável pelas escolhas que mobilizam a imagem institucional. A Comunicação pode ter responsabilidade técnica e institucional por aplicar diretrizes de marca, acessibilidade, coerência visual e adequação aos públicos. Isso não determina, por si só, que deva decidir unilateralmente todas as escolhas criativas; é preciso definir quais decisões são compartilhadas, quais critérios orientam a validação e como divergências são tratadas.
+A leitura de governança em discussão separa autoridades, em vez de atribuir à Comunicação uma decisão final sobre tudo. A área proponente conhece e responde pelo evento: propósito, programação, informações, públicos a atingir, restrições reais, prioridades e correção do conteúdo. A Comunicação pode responder tecnicamente pela comunicação institucional: aplicação da marca, identidade visual, tipografia, linguagem, hierarquia da informação, acessibilidade, adequação aos canais e coerência com o restante da instituição.
+
+Essa separação não impede diálogo. A área proponente deve participar do briefing, apontar problemas, fazer críticas e pedir justificativas. Participação, porém, não se confunde automaticamente com aprovação estética de cada escolha. Uma data incorreta demanda correção pela fonte responsável pelo conteúdo; já uma preferência por determinada fonte pode requerer avaliação técnica da Comunicação e das diretrizes institucionais aplicáveis. Mesmo que mais de uma opção seja admitida por um manual, permanece a pergunta sobre quem tem competência para escolher entre elas.
+
+O relato também sugere uma válvula de escalonamento para divergências relevantes — por exemplo, quando envolvem objetivos institucionais conflitantes, autoridade administrativa ou risco reputacional. A finalidade é evitar tanto a redução da Comunicação a prestadora interna que executa alterações até que alguém "goste", quanto a transformação de sua autonomia técnica em soberania sem prestação de contas.
 
 ## Evidências disponíveis
 
@@ -55,6 +59,9 @@ A leitura de governança em discussão é que a área proponente conhece o event
 > [!hipotese]
 > A necessidade de uma decisão final pode variar conforme o elemento em questão: escolhas de conteúdo e especificidades do evento podem ser compartilhadas, enquanto desvios de diretrizes institucionais podem exigir validação técnica ou uma instância de governança definida.
 
+> [!hipotese]
+> Distinguir participação, consulta e aprovação pode permitir que áreas proponentes contribuam com o conhecimento do evento sem transformar preferências estéticas em comando sobre decisões técnicas de identidade institucional.
+
 ## Impactos ou riscos percebidos
 
 - Inconsistência na apresentação institucional entre eventos e canais.
@@ -69,6 +76,7 @@ A leitura de governança em discussão é que a área proponente conhece o event
 3. Como o briefing pode registrar objetivos, público, conteúdo essencial, restrições e margem de criação antes do início da peça?
 4. Que instância ou fluxo deve resolver divergências entre preferências de uma área e critérios técnicos ou institucionais de Comunicação?
 5. Como assegurar consistência, acessibilidade e qualidade sem transformar o processo em controle arbitrário sobre as áreas proponentes?
+6. Em quais situações uma divergência deve ser escalada e quem responde pela decisão, pela justificativa e pelos efeitos dela?
 
 ## Próximos passos de pesquisa
 
@@ -83,3 +91,4 @@ A leitura de governança em discussão é que a área proponente conhece o event
 - [[01 Casos/Definição de finalidade das peças e circulação fora de contexto]]
 - [[01 Casos/Plano de comunicação — escopo, hierarquia e corresponsabilidade]]
 - [[02 Padrões e hipóteses/Envolvimento antecipado e ativos reutilizáveis]]
+- [[02 Padrões e hipóteses/Autoridade técnica e corresponsabilidade na Comunicação institucional]]

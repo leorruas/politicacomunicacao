@@ -76,3 +76,4 @@ Gestores devem envolver a Comunicação na definição das estratégias instituc
 - [[01 Casos/Critérios para escolha, prioridade e combinação de canais institucionais]]
 - [[01 Casos/Definição de finalidade das peças e circulação fora de contexto]]
 - [[02 Padrões e hipóteses/Envolvimento antecipado e ativos reutilizáveis]]
+- [[02 Padrões e hipóteses/Autoridade técnica e corresponsabilidade na Comunicação institucional]]
